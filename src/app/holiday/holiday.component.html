@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>What Holiday Is It Today?</h1>
+  @if(loading){
+    <p>Loading...</p>
+  } @else if (error){
+    <p>{{ error }}</p>
+  } @else {
+    @if(holiday){
+      <div>
+        <p>Today is: {{ holiday.name }}</p>
+        <p>In: {{ country }}</p>
+      </div>
+    } @else {
+      <div>
+        <p>No holiday today in {{ country }}</p>
+      </div>
+    }
+  }
+</div>
